@@ -3,7 +3,29 @@
 #
 # Used to display OpenVPN Certs
 # By Harm Gerding
+# ver 1.0
+#    
+# Copyright (C) 2022  Harm Gerding
 #
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Usage: /root/bin/ovpn-show-certs -hrv
+# -h this help
+# -d Debug
+# -r revoked list
+# -v show valid certs
+# -f file-index.txt (needs to be combined with -r or a -v)
 
 
 import sys, getopt
@@ -15,12 +37,17 @@ validtype="no"
 debug=False
 
 def print_help():
+   print("ovpn-show-cert Copyright (C) 2022  Harm Gerding")
+   print("This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.")
+   print("This is free software, and you are welcome to redistribute it")
+   print("under certain conditions;")
+       
    print("Usage: " + str(sys.argv[0]) + " -hrv")
    print("-h this help")
    print("-d Debug")
    print("-r revoked list")
    print("-v show valid certs")
-   print("-f file-index-html (needs to be combined with -r or a -v)")
+   print("-f file-index.txt (needs to be combined with -r or a -v)")
 
 
 def main(argv):
